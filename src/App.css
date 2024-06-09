@@ -1,0 +1,292 @@
+.weekday-date-range-picker {
+  position: relative;
+  display: inline-block;
+}
+
+.weekday-date-range-picker input {
+  width: 250px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.popup {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.calendars {
+  display: flex;
+  user-select: none;
+  font-size: 16px;
+}
+
+.calendar {
+  margin: 10px;
+  width: 275px;
+}
+
+.calendars .calendar-divider {
+  border-right: 1px solid lightgray;
+}
+
+.calendar:first-child {
+  margin-left: 0;
+}
+
+.calendar:last-child {
+  margin-right: 0;
+}
+
+.header {
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.header button.left-button {
+  float: left;
+}
+
+.header button.right-button {
+  float: right;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.day,
+.day-label {
+  padding: 5px;
+  text-align: center;
+}
+
+.day-label {
+  font-weight: bold;
+}
+
+.day {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.day.empty {
+  background: none;
+  cursor: default;
+}
+
+.day.weekend {
+  color: darkgray;
+  cursor: not-allowed;
+}
+
+.day.selected {
+  background: rgb(from #1675e0 r g b/50%);
+  color: white;
+  margin: auto 0;
+  max-height: 24px;
+}
+
+.day.start,
+.day.end {
+  background: #1675e0;
+  font-weight: bold;
+  transform: scaleY(1.15);
+}
+
+.day.start {
+  border-radius: 5px 0 0 5px;
+  color: white;
+}
+
+.day.end {
+  border-radius: 0 5px 5px 0;
+  color: white;
+}
+
+.day.currentDay {
+  border: 1px solid #1675e0;
+  border-radius: 5px;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px 6px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  color: #ccc;
+}
+
+.header button:hover {
+  border-radius: 5px;
+  background: lightgray;
+}
+
+.predefined-ranges {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid lightgray;
+}
+
+.default-select {
+  display: flex;
+  gap: 8px;
+}
+
+.default-select button:hover {
+  text-decoration: underline;
+}
+
+.predefined-ranges button {
+  cursor: pointer;
+  color: #2589f5;
+}
+
+.predefined-ranges button.calendar-submit {
+  background-color: #2589f5;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.calendar-submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.predefined-range:hover {
+  text-decoration: none;
+}
+
+.popup-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.popup-footer button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.popup-footer button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.month-picker {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.year-picker {
+  max-height: 170px;
+  overflow-y: auto;
+}
+
+.year {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.year div {
+  padding: 5px;
+}
+
+.year div:first-child {
+  font-weight: bold;
+}
+
+.months {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 100%;
+  text-align: center;
+}
+
+.month {
+  cursor: pointer;
+  padding: 5px;
+  margin: 2px;
+}
+
+.month:hover {
+  background-color: #f0f0f0;
+}
+
+.month.selected {
+  background-color: #3498ff;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.year.selected {
+  color: #1675e0;
+  font-weight: 500;
+}
+
+.year-month-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  gap: 8px;
+}
+
+.year-month-wrapper:not(:last-child) {
+  border-bottom: 1px dashed #e5e5ea;
+
+}
+
+.month:active {
+  transform: translateY(1px);
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper svg {
+  position: absolute;
+  right: 8px;
+  width: 14px;
+  fill: gray;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.input-wrapper svg.closeIcon:hover {
+  fill: #f44336;
+}
+
+.input-wrapper input {
+  border: 1px solid #e5e5e0;
+  border-radius: 6px;
+  padding: 10px;
+  padding-right: 24px;
+}
